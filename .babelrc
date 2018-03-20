@@ -1,0 +1,30 @@
+{
+  "comments" : true,
+  "compact" : true,
+  "presets": [
+    "react",
+    "env"
+  ],
+  plugins: [
+    [
+      "module-resolver", {
+        root: [
+          "./client"
+        ],
+        "alias": {
+          "package.json": "./package.json"
+        }
+      }
+    ],
+    "conditional-compilation",
+    "react-hot-loader/babel",
+    "syntax-dynamic-import",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}

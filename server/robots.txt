@@ -1,0 +1,7 @@
+# for more info visit the following URLs...
+# https://varvy.com/robottxt.html
+# https://developers.google.com/search/reference/robots_txt
+
+# by default we disallow all crawlers to access the entire site
+User-agent: *
+Disallow: /

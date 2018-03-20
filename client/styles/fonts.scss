@@ -1,0 +1,51 @@
+// Nunito Regular
+@font-face {
+  font-family: 'Nunito';
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+
+  // the order is important
+  src: url('#{$fonts-directory}/nunito/nunito-regular.eot');
+  src:
+    url('#{$fonts-directory}/nunito/nunito-regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$fonts-directory}/nunito/nunito-regular.woff2') format('woff2'),
+    url('#{$fonts-directory}/nunito/nunito-regular.woff') format('woff'),
+    url('#{$fonts-directory}/nunito/nunito-regular.svg#Nunito Regular') format('svg');
+}
+
+// Nunito SemiBold
+@font-face {
+  font-family: 'Nunito';
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+
+  // the order is important
+  src: url('#{$fonts-directory}/nunito/nunito-semibold.eot');
+  src:
+    url('#{$fonts-directory}/nunito/nunito-semibold.eot?#iefix') format('embedded-opentype'),
+    url('#{$fonts-directory}/nunito/nunito-semibold.woff2') format('woff2'),
+    url('#{$fonts-directory}/nunito/nunito-semibold.woff') format('woff'),
+    url('#{$fonts-directory}/nunito/nunito-semibold.svg#Nunito SemiBold') format('svg');
+
+  unicode-range: U+0020-2212;
+}
+
+// Nunito Bold
+@font-face {
+  font-family: 'Nunito';
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+
+  // the order is important
+  src: url('#{$fonts-directory}/nunito/nunito-bold.eot');
+  src:
+    url('#{$fonts-directory}/nunito/nunito-bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$fonts-directory}/nunito/nunito-bold.woff2') format('woff2'),
+    url('#{$fonts-directory}/nunito/nunito-bold.woff') format('woff'),
+    url('#{$fonts-directory}/nunito/nunito-bold.svg#Nunito Bold') format('svg');
+
+  unicode-range: U+0020-2212;
+}

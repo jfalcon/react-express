@@ -1,0 +1,54 @@
+# cache directories
+.git/
+.grunt/
+.eslintcache/
+.npm/
+.node_repl_history/
+.nyc_output/
+.svn/
+.vscode/
+
+# dependency directories
+bower_components/
+node_modules/
+jspm_packages/
+
+# output directories
+.bin/
+.dist/
+.compiled/
+bin/
+dist/
+
+# binary files
+*.bin
+*.com
+*.exe
+
+# logs and databases (use parent folder of the project to store SQL files)
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.tgz
+*.zip
+
+# temporary editor files
+*.sublime-workspace

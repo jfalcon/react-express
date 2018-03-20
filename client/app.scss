@@ -1,0 +1,49 @@
+/*/
+/ / CSS Specificity Hierarchy
+/ /
+/ / 1: !important Rule
+/ / 2: Inline Styles
+/ / 3: ID Selectors
+/ / 4: Class and Pseudo-Class Selectors
+/ / 5: Element Selectors
+/*/
+
+/*/
+/ / This code makes use of attribute selectors. They aren't as common so here is a
+/ / quick rundown. There are seven types, are case-sensitive, and use brackets.
+/ /
+/ / [data-value] { data attribute simply exists on any element }
+/ / a[href="http://google.com"] { href attribute has the exact web address }
+/ /
+/ / [data-value="foo"] { data attribute has the exact value of "foo" }
+/ / [data-value*="foo"] { data attribute has the value "foo" somewhere in it }
+/ / [data-value~="foo"] { data attribute has the value "foo" in a space-separated list }
+/ / [data-value^="foo"] { data attribute starts with the value of "foo" }
+/ / [data-value|="foo"] { data attribute starts with "foo" in a dash-separated list }
+/ / [data-value$="foo"] { data attribute ends with the value of "foo" }
+/*/
+
+// it's important to only include what we need, tools like Purify CSS etc.
+// don't work well with dynamic JavaScript so we don't use them, as such
+// it's important to be meticulous as to what gets included in the app
+// never do a blanket include like importing '~bootstrap/scss/bootstrap'
+
+// these includes are always required and should be included in this order
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/utilities';
+
+// import the optional bootstrap modules we want, refer to
+// ~bootstrap/scss/ for a full list of available modules
+@import '~bootstrap/scss/breadcrumb';
+@import '~bootstrap/scss/tooltip';
+
+// these are core styles and should be included in this order
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/fonts';
+@import 'styles/base';

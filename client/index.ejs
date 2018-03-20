@@ -1,0 +1,90 @@
+<%
+  // this must be in ES5 since it does not go through Babel
+  var data = htmlWebpackPlugin.options.customData;
+  var imageDir = data.paths.local + data.separator + data.config.directories.images + data.separator;
+
+  // include this explicitly to force webpack to load the image
+  // TODO: var favicon = require(imageDir + 'favicon.ico');
+
+  // TODO: this should be localized
+  var noScriptMessage = 'Enable JavaScript';
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Viking Cruises</title>
+
+  <meta name="description" content="<%= data.config.description %>">
+  <meta name="keywords" content="<%= data.config.keywords %>">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="version" content="<%= data.config.version %>">
+  <meta name="viewport" content="initial-scale=1,shrink-to-fit=no,width=device-width">
+
+  <meta charset="<%= data.config.charset %>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- since we use two compiler configs for splitting with no named chunks -->
+  <!-- the side effect is we have to include style entries manually -->
+  <% if (data.files.style) {
+    %><link rel="stylesheet" type="text/css" href="<%= data.files.style %>"><%
+  } else {
+    %><!-- note: for development builds the styles are included via JavaScript --><%
+  } %>
+
+  <!-- don't use a generic generator for images, we're artists after all -->
+
+  <!-- old way 16x16, 32x32, 48x48 -->
+  <link rel="icon" href="<%= imageDir %>/favicon.ico?v=<%= data.config.version %>" />
+  <!-- Android Normal Resolution -->
+  <link rel="icon" sizes="128x128" href="<%= imageDir %>/favicon.png">
+  <!-- Android High Resolution -->
+  <link rel="icon" sizes="192x192" href="<%= imageDir %>/favicon-hd.png">
+  <!-- iPhone 1-3GS -->
+  <link rel="apple-touch-icon" sizes="57x57" href="<%= imageDir %>/touch-icon-iphone.png">
+  <!-- iPad and iPad mini 1 -->
+  <link rel="apple-touch-icon" sizes="76x76" href="<%= imageDir %>/touch-icon-ipad.png">
+  <!-- iPhone 4-8 -->
+  <link rel="apple-touch-icon" sizes="120x120" href="<%= imageDir %>/touch-icon-iphone-retina.png">
+  <!-- iPad and iPad mini 2 -->
+  <link rel="apple-touch-icon" sizes="152x152" href="<%= imageDir %>/touch-icon-ipad-retina.png">
+  <!-- iPad Pro -->
+  <link rel="apple-touch-icon" sizes="167x167" href="<%= imageDir %>/touch-icon-ipad-pro.png">
+  <!-- iPhone X, 6-8 Plus -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= imageDir %>/touch-icon-iphone-6-plus.png">
+
+  <!-- in HTML 4.01, the <noscript> tag can only be used inside the <body> element -->
+  <!-- In HTML5, the <noscript> tag can be used both inside <head> and <body> -->
+  <noscript><style>.jsonly { display: none !important; }</style></noscript>
+</head>
+<!--[if IE]><body class="old-browser"><![endif]-->
+<!--[if !IE]--><body data-ws-theme="1"><!--[endif]-->
+  <section id="page-loader" class="jsonly">
+    <div>
+      <svg viewBox="25 25 50 50">
+        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </div>
+  </section>
+
+  <main id="application"></main>
+
+  <!-- in HTML 4.01, the <noscript> tag can only be used inside the <body> element -->
+  <!-- In HTML5, the <noscript> tag can be used both inside <head> and <body> -->
+  <noscript><%= noScriptMessage %></noscript>
+
+  <!-- we should not be supporting anything older than IE11, but just in case... -->
+  <!--[if lte IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.201711092/classList.min.js"></script>
+  <![endif]-->
+  <!--[if IE 10]>
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+  <![endif]-->
+
+  <!-- since we use two compiler configs for splitting with no named chunks -->
+  <!-- the side effect is we have to include script entries manually -->
+  <script type="text/javascript" src="<%= data.files.vendor %>"></script>
+  <script type="text/javascript" src="<%= data.files.script %>"></script>
+</body>
+</html>

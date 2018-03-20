@@ -1,0 +1,15 @@
+# editorconfig.org
+root = true
+
+# keep all files consistent in formatting
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# markdown uses trailing spaces for line breaks
+[*.md]
+trim_trailing_whitespace = false

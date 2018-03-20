@@ -1,0 +1,6 @@
+export default {
+  FETCH_MESSAGE_DATA: 'containers/pages/home/FETCH_MESSAGE_DATA',
+  FETCH_MESSAGE_DATA_INVOKED: 'containers/pages/home/FETCH_MESSAGE_DATA_INVOKED',
+  FETCH_MESSAGE_DATA_SUCCESS: 'containers/pages/home/FETCH_MESSAGE_DATA_SUCCESS',
+  FETCH_MESSAGE_DATA_FAILURE: 'containers/pages/home/FETCH_MESSAGE_DATA_FAILURE'
+};

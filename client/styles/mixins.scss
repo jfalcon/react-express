@@ -1,0 +1,32 @@
+@import 'variables';
+
+// flag icons
+@mixin flag-icon($country) {
+  .flag-icon-#{$country} {
+    // TODO: ...
+    background-image: url(#{$flag-icon-rect-directory}/#{$country}.svg);
+
+    &.flag-icon-squared {
+      background-image: url(#{$flag-icon-square-directory}/#{$country}.svg);
+    }
+  }
+}
+
+// transitions
+@mixin fade-in($seconds) {
+  // safely convert the parameter to seconds since it's a number
+  $seconds: $seconds + 0s;
+
+  visibility: visible;
+  opacity: 1;
+  transition: opacity $seconds linear;
+}
+
+@mixin fade-out($seconds) {
+  // safely convert the parameter to seconds since it's a number
+  $seconds: $seconds + 0s;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s $seconds, opacity $seconds linear;
+}

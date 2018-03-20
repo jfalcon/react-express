@@ -1,0 +1,49 @@
+// options
+$enable-transitions: true;
+$enable-shadows: false;
+
+// directories
+$images-directory: '../../images'; // TODO: ...
+$images-directory-background: '#{$images-directory}/background';
+$images-directory-browsers: '#{$images-directory}/browsers';
+$flag-icon-directory: '#{$images-directory}/flags';
+$flag-icon-rect-directory: '#{$flag-icon-directory}/4x3';
+$flag-icon-square-directory: '#{$flag-icon-directory}/1x1';
+$fonts-directory: 'fonts';
+
+// base colors
+$white: #fafafa; // pure white is hard on the eyes over time
+$black: black;
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+// action colors
+$bg-hover: rgba($white, 0.06);
+$bg-highlighted-light: rgba($white, 0.08);
+$bg-highlighted-lightest: rgba($white, 0.02);
+$bg-highlighted-dark: rgba($black, 0.2);
+$bg-highlighted-darkest: rgba($black, 0.96);
+$border-light: rgba($white, 0.125);
+$border-lightest: rgba($white, 0.04);
+
+// banners
+$banner-bg-color: black;
+$banner-bg-color-translucent: rgba($banner-bg-color, 0.75);
+$banner-font-size: 1.5rem;
+
+// typography
+$font-family-sans-serif: 'Nunito', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$font-size-root: 1em;
+$text-muted: rgba($white, 0.7);
+$headings-color: $white;
+$font-weight-bold: 600;
+$headings-font-weight: $font-weight-bold;
+$blockquote-small-color: $text-muted;
